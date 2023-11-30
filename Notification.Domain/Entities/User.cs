@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Notification.Domain.Common.Entities;
+using Notification.Domain.Enums;
 
-namespace Notification.Domain.Entities
+namespace Notification.Domain.Entities;
+
+public class User :IEntity
 {
-    internal class User
-    {
-    }
+    public Guid Id { get; set; }
+
+    public string UserName { get; set; } = default!;
+
+    public string PhoneNumber { get; set; } = default!;
+
+    public string EmailAddress { get; set; } = default!;
+
+    public RoleType Role { get; set; }
+
+    public UserSettings UserSettings { get; set; }
 }

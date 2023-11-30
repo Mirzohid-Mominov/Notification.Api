@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Notification.Domain.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Notification.Domain.Entities
+namespace Notification.Domain.Entities;
+
+public class SmsHistory : NotificationHistory
 {
-    internal class SmsHistory
+    public SmsHistory()
     {
+        Type = NotificationType.Sms;
+    }
+
+    public string SenderPhoneNumber { get; set; } = default!;
+
+    public string ReceiverPhoneNumber { get; set; } = default!;
+
+    [NotMapped]
+    public SmsTemplate SmsTemplate 
+    {
+        get => Template is not null ? Template as SmsTemplate : null;
+        set => Template = value;
     }
 }

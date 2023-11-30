@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Type = Notification.Domain.Enums.NotificationType;
 
-namespace Notification.Domain.Entities
+namespace Notification.Domain.Entities;
+
+public class SmsTemplate : NotificationTemplate
 {
-    internal class SmsTemplate
+    public SmsTemplate()
     {
+        Type = Type.Sms;
     }
 }

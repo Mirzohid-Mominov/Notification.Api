@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Type = Notification.Domain.Enums.NotificationType;
 
-namespace Notification.Domain.Entities
+namespace Notification.Domain.Entities;
+
+public class EmailTemplate : NotificationTemplate
 {
-    public class EmailTemplate : NotificationTemplate
+    public EmailTemplate()
     {
-        public EmailTemplate()
-        {
-            
-        }
-
-        public string Subject { get; set; } = default!;
+        Type = Type.Email;
     }
+
+    public string Subject { get; set; } = default!;
 }
